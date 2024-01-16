@@ -52,8 +52,6 @@ label start:
             jump kill
 
         "Пойти в вагон":
-            g "text"
-
             hide peten hat sad with moveoutleft
             hide hitler normal with easeoutleft
 
@@ -86,7 +84,33 @@ label trainCarriage:
     show peten serious at leftPeten
     with dissolve
 
-    p "Вы создали новую игру Ren'Py."
+    show hitler normal at rightHitler
+    with dissolve
+
+    p "И так, я ..."
+
+    g "Ruhig, спокойно. Здесь я буду диктовать условия!"
+
+    show peten evil
+
+    g "Erstens, во первых, давайте обсудим экономическое сотрудничество. Ваши заводы будут работать на благо германии, они будут выпускать необходимые нам вещи, а ресурсами в ваших колониях теперь будем распоряжаться мы."
+
+    menu:
+        "Заводы франции будут работать на благо германии, а колониальными ресурсами теперь будем распоряжаться немцы."
+
+        "Согласиться":
+            p "Думаю у меня нет иного выбора кроме как согласиться."
+
+            g "Wunderbar, замечательно!"
+
+            jump agreeFirstRequirement
+
+        "Не согласиться требованием":
+            p "К сожалению, но я не могу согласиться. Как главе государства мне нужно позаботься чтобы мои граждани было обеспечаны всем необходимым."
+
+            g "Verdammt, проклятый. Обсудим этот пункт позже."
+
+            jump disagreeWithFirstRequirement
 
     return
 
