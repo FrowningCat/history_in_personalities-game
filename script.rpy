@@ -170,20 +170,46 @@ label agreeFirstRequirement:
 # Не согласиться со вторым требованием:
 label disagreeWithSecondRequirement:
 
+    g "Traurig, печально. Возможно нам нужен еще один человек, который поможет принять вам верное решение."
+
+    jump himmlerEnters
+
     return
 
 # Согласиться со вторым требованием:
 label agreeSecondRequirement:
 
+    g "Wunderbar, замечательно! Теперь осталось обсудить последний пункт. Вам необходимо объявить войну Великобритании."
+
+        menu:
+        "Объявить войну Великобритании."
+
+        "Согласиться":
+            p "Боюсь я уже не в силах спорить."
+
+            g "Ja! Ja! Ja! Я знал что с вами можно найти общий язык."
+
+            jump agreeThirdRequirement
+
+        "Не согласиться требованием":
+            p "Нет! Не за что! Я не могу этого сделать."
+
+            jump disagreeWithThirdRequirement
+
     return
 
-# Не согласиться со вторым требованием:
+# Не согласиться со третим требованием:
 label disagreeWithThirdRequirement:
 
     return
 
-# Согласиться с первым требованием:
+# Согласиться с третим требованием:
 label agreeThirdRequirement:
+
+    return
+
+# Входит Гимлер:
+label himmlerEnters:
 
     return
 
